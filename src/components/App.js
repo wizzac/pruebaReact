@@ -2,7 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Nabvar from './Navbar/Navbar'
-
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
+import { faIgloo } from '@fortawesome/free-solid-svg-icons'
+import { faKeyboard } from '@fortawesome/free-solid-svg-icons'
+import { faAddressCard } from '@fortawesome/free-solid-svg-icons'
+library.add(faHome)
+library.add(faIgloo)
+library.add(faKeyboard)
+library.add(faAddressCard)
 
 const Container = styled.div`
     display: flex;
