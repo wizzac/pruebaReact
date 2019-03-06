@@ -2,7 +2,6 @@ import React from "react";
 import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-//import stl from 'styled-components';
 
 
 export default class Navbar extends React.Component {
@@ -22,8 +21,7 @@ export default class Navbar extends React.Component {
               </ul>
                 <div className="page" id="p1">
                   <li className="icon fa fa-home"><span className="title">Home</span>
-                    <span className="hint">Like this pen to see the magic!...<br/> 
-                    Just kidding, it won't happen anything but I'll be really happy If you do so.</span>
+                    <span className="hint">Pandora Script 🔪<br/> </span>
                   </li>   
                 </div>
                 <div className="page" id="p2">
