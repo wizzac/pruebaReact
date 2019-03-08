@@ -19,10 +19,8 @@ export default class FileUpload extends Component{
         const storage =firebase.storage();
         var storageRef = storage.ref();
         var imagesRef = storageRef.child(`imagenes/${file.name}`);
-
         const task =imagesRef.put(file);
-        task.on('state_changed',snapshot=>{
-            console.log('entra state changed');
+        task.on('state_changed',snapshot=> {
             let porcentaje=(snapshot.bytesTransferred/snapshot.totalBytes)*100
             this.setState({
                 uploadValue:porcentaje
@@ -30,13 +28,15 @@ export default class FileUpload extends Component{
         }, error=>{
             console.log(error.message)
         }, ()=>{
-            console.log('entra al finish de la funcion');
-            this.setState({
-                uploadValue:100,
-                picture:task.snapshot.downloadURL
+            imagesRef.getDownloadURL().then(url => {
+                this.setState({
+                    picture: url,
+                    uploadValue:100
+                });
             })
         });
     }
+
     render(){
         return (
             <div>
